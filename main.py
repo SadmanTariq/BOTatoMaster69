@@ -18,6 +18,9 @@ responses = {
     "fuck u": ["no, fuck you",
                "fuck you harder",
                "fuck you {0}"],
+    "fuck you": ["no, fuck you",
+                 "fuck you harder",
+                 "fuck you {0}"],
     "mahdi gay": ["i agree"]
 }
 
