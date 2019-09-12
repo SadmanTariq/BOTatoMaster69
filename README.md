@@ -1,0 +1,1 @@
+[Invite link](https://discordapp.com/oauth2/authorize?client_id=593359969806712861&scope=bot&permissions=0)
