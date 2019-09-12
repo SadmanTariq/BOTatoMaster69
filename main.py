@@ -25,7 +25,7 @@ responses = {
     "Do black lives matter?": ["No"],
     "What is the meaning of life?": ["Error file not found!!!"],
     "Hi": ["Fuck you"],
-    "Hello": ["You're existance is trivial"],
+    "Hello": ["Your existance is trivial."],
     "Why are you gay?": ["Because Mahadi","Don't you have anything vetter to do? "],
     "Whats the time?": ["Time is relative"]
     "Why is Mahadi gay?": ["Result of severe childhood trauma, and years of getting sexually abused by his brother."]
