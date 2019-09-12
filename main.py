@@ -22,7 +22,7 @@ responses = {
     "fuck you": ["no, fuck you",
                  "fuck you harder",
                  "fuck you {0}"],
-    "mahdi gay": ["i agree"]
+    "mahdi gay": ["i agree"],
      "Do black lives matter?": ["No"],
     "What is the meaning of life?": ["Error file not found!!!"],
     "Hi": ["Fuck you"],	
