@@ -14,7 +14,6 @@ except FileNotFoundError:
 client = discord.Client()
 
 authorized_user_ids = [340115550208262145]
-bot_user_id = 593359969806712861
 responses = {
     "fuck u": ["no, fuck you",
                "fuck you harder",
@@ -22,15 +21,19 @@ responses = {
     "fuck you": ["no, fuck you",
                  "fuck you harder",
                  "fuck you {0}"],
-    "mahdi gay": ["i agree"]
+    "mahdi gay": ["i agree"]],
+    "Do black lives matter?": ["No"],
+    "What is the meaning of life?": ["Error file not found!!!"],
+    "Hi": ["Fuck you"],
+    "Hello": ["You're existance is trivial"],
+    "Why are you gay?": ["Because Mahadi","Don't you have anything vetter to do? "],
+    "Whats the time?": ["Time is relative"]
+    "Why is Mahadi gay?": ["Result of severe childhood trauma, and years of getting sexually abused by his brother."]
 }
 
 
 @client.event
 async def on_message(message):
-    if message.author.id == bot_user_id:
-        return
-
     print(message.author.id)
     if message.content == "!!shutdown":
         if message.author.id in authorized_user_ids:
@@ -41,7 +44,7 @@ async def on_message(message):
 
     for trigger, response_list in responses.items():
         if message.content.lower().find(trigger) != -1:
-            response = response_list[randint(0, len(response_list) - 1)]
+            response = response_list[randint(len(response_list))]
             response = response.format(message.author.name)
             await message.channel.send(response)
             return
