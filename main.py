@@ -1,13 +1,13 @@
 import discord  # noqa: F401
 from random import randint
+from os import environ
 
-token_path = "token"
+token_variable_name = "DISCORD_TOKEN"
 token = ""
 try:
-    with open(token_path, 'r') as token_file:
-        token = token_file.read()
-except FileNotFoundError:
-    print("Token file not found. Quitting.")
+    token = environ[token_variable_name]
+except KeyError:
+    print("Token variable not set. Quitting.")
     quit()
 
 
