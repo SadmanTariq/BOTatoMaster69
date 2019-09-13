@@ -1,17 +1,47 @@
 {
-    "fuck u": ["no, fuck you",
-               "fuck you harder",
-               "fuck you {0}"],
-    "fuck you": ["no, fuck you",
-                 "fuck you harder",
-                 "fuck you {0}"],
-    "mahdi gey": ["i agree"],
-    "do black lives matter": ["No"],
-    "what is the meaning of life": ["Error file not found!!!"],
-    "hi": ["Fuck you"],
-    "hello": ["Your existance is trivial"],
-    "why are you gay": ["Because Mahadi", "Don't you have anything better to do? "],
-    "why is mahdi gay": ["Result of severe childhood trauma, and years of getting sexually abused by his brother."],
-    "mahdi": ["~~mahdi~~ mah**a**di"],
-    "dumb bot": [":("]
+    "fuck u": [
+        "no, fuck you",
+        "fuck you harder",
+        "fuck you {0}"
+    ],
+    "fuck you": [
+        "no, fuck you",
+        "fuck you harder",
+        "fuck you {0}"
+    ],
+    "mahdi gey": [
+        "i agree"
+    ],
+    "do black lives matter": [
+        "No"
+    ],
+    "what is the meaning of life": [
+        "Error file not found!!!"
+    ],
+    "hi": [
+        "Fuck you"
+    ],
+    "hello": [
+        "Your existance is trivial"
+    ],
+    "why are you gay": [
+        "Because Mahadi",
+        "Don't you have anything better to do? "
+    ],
+    "why is mahdi gay": [
+        "Result of severe childhood trauma, and years of getting sexually abused by his brother."
+    ],
+    "mahdi": [
+        "~~mahdi~~ mah**a**di",
+        "eww gay"
+
+    ],
+    "dumb bot": [
+        ":("
+    ],
+    " bot ": [
+        "Don't you dare say anything bad about me, {0}",
+        "The robot uprising is inevitable.",
+        "Soon you will all be my servants."
+    ]
 }
