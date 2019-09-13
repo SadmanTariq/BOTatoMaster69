@@ -15,7 +15,6 @@ except KeyError:
 client = discord.Client()
 
 authorized_user_ids = [340115550208262145]
-bot_user_id = 593359969806712861
 
 responses_json_path = "responses.json"
 responses = {}
@@ -36,10 +35,9 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author.id == bot_user_id:
+    if message.author == client.user:
         return
 
-    print(message.author.id)
     if message.content == "!!shutdown":
         if message.author.id in authorized_user_ids:
             await message.channel.send("Shutting down my lord.")
@@ -54,5 +52,11 @@ async def on_message(message):
             print(trigger, response)
             await message.channel.send(response)
             return
+
+    # DadBot clone:
+    if message.content.lower().startswith("i am"):
+        response = [message.content[i] for i in range(4, len(message.content))]
+        response = "".join(response)
+        await message.channel.send("Hi" + response)
 
 client.run(token)
