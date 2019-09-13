@@ -1,6 +1,7 @@
 import discord  # noqa: F401
 from random import randint
 from os import environ
+import json
 
 token_variable_name = "DISCORD_TOKEN"
 token = ""
@@ -15,23 +16,22 @@ client = discord.Client()
 
 authorized_user_ids = [340115550208262145]
 bot_user_id = 593359969806712861
-responses = {
-    "fuck u": ["no, fuck you",
-               "fuck you harder",
-               "fuck you {0}"],
-    "fuck you": ["no, fuck you",
-                 "fuck you harder",
-                 "fuck you {0}"],
-    "mahdi gey": ["i agree"],
-    "do black lives matter": ["No"],
-    "what is the meaning of life": ["Error file not found!!!"],
-    "hi": ["Fuck you"],
-    "hello": ["You're existance is trivial"],
-    "why are you gay": ["Because Mahadi", "Don't you have anything better to do? "],  # noqa
-    "why is mahdi gay": ["Result of severe childhood trauma, and years of getting sexually abused by his brother."],  # noqa
-    "mahdi": ["~~mahdi~~ mah**a**di"],
-    "dumb bot": [":("]
-}
+
+responses_json_path = "responses.json"
+responses = {}
+
+try:
+    with open(responses_json_path) as responses_json:
+        responses = json.load(responses_json)
+        print("Responses loaded.")
+except FileNotFoundError:
+    print(responses_json_path + "does not exist. Quitting.")
+    quit()
+
+
+@client.event
+async def on_ready():
+    print("Ready.")
 
 
 @client.event
