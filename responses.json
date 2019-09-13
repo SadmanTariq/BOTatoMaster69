@@ -18,9 +18,6 @@
     "what is the meaning of life": [
         "Error file not found!!!"
     ],
-    "hi": [
-        "Fuck you"
-    ],
     "hello": [
         "Your existance is trivial"
     ],
@@ -97,5 +94,8 @@
     ],
     "mirror mirror on the wall who's the gayest of em all": [
         "Mahadi"
+    ],
+    "hi": [
+        "Fuck you"
     ]
 }
