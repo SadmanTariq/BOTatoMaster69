@@ -5,6 +5,10 @@ General purpose bot for KKK server. Currently only responds to certain triggers 
 
 ## Editing responses:
 
-1. Click [here](https://github.com/SadmanTariq/BOTatoMaster69/blob/master/responses.json).
-2. Edit it.
-3. Make a pull request.
+Click [here](https://github.com/SadmanTariq/BOTatoMaster69/blob/master/responses.json) then edit the file and create a pull request.
+
+### `responses.json` format:
+    {
+        "<TRIGGER>": [<Array of responses>],
+        ...
+    }
