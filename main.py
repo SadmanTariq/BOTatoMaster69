@@ -45,6 +45,12 @@ async def on_message(message):
         else:
             await message.channel.send("Fuck off " + message.author.name)
 
+    # DadBot clone:
+    if message.content.lower().startswith("i am"):
+        response = [message.content[i] for i in range(4, len(message.content))]
+        response = "".join(response)
+        await message.channel.send("Hi" + response)
+
     for trigger, response_list in responses.items():
         if message.content.lower().find(trigger) != -1:
             response = response_list[randint(0, len(response_list) - 1)]
@@ -52,11 +58,5 @@ async def on_message(message):
             print(trigger, response)
             await message.channel.send(response)
             return
-
-    # DadBot clone:
-    if message.content.lower().startswith("i am"):
-        response = [message.content[i] for i in range(4, len(message.content))]
-        response = "".join(response)
-        await message.channel.send("Hi" + response)
 
 client.run(token)

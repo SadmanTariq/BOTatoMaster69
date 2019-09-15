@@ -1,4 +1,8 @@
 {
+    "flip a coin": [
+        "Heads.",
+        "Tails."
+    ],
     "fuck u": [
         "no, fuck you",
         "fuck you harder",
@@ -93,9 +97,10 @@
     "mirror mirror on the wall who's the gayest of em all": [
         "Mahadi"
     ],
-
-    "what is masrur": ["An empty husk of a human shell."],
-        "whats your view on autism": [
+    "what is masrur": [
+        "An empty husk of a human shell."
+    ],
+    "whats your view on autism": [
         "If it can't think, put its head in the sink"
     ],
     "whats your view on canibalism": [
@@ -105,7 +110,7 @@
         "Yeetus that feetus"
     ],
     "whats your view on necrophilia": [
-    "If there's heat, its good enough for meat"
+        "If there's heat, its good enough for meat"
     ],
     "what to do if a girl doesn't give consent": [
         "Kill her, then drill her"
@@ -136,5 +141,4 @@
         "Don't say that, there's plenty more to life.",
         "Don't worry I'll take care of it pretty soon"
     ]
-
 }
