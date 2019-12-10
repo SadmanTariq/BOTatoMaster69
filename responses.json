@@ -55,7 +55,13 @@
         "Mahadi's miserable life, {0}",
         "A slice of apple pie is $2.50 in Jamaica and $3.00 in the Bahamas. These are the pie rates of the Caribbean.",
         "I asked a Chinese girl for her number. She said, 'Sex! Sex! Sex! Free sex tonight!' I said, 'Wow!'' Then her friend said, 'She means 666-3629.'",
-        "Mahadi isn't gay. HAHAHA that one cracked me up."
+        "Mahadi isn't gay. HAHAHA that one cracked me up.",
+        "The bicycle was two tired to stand",  
+        "The mexican magician said uno,dos and disappeared without a tres",  
+        "The whiteboard is quite a REMARKABLE invention",  
+        "Why does spider-man like the internet? Cuz its a WORLD WIDE WEB",  
+        "Have u heard about the bookcalled gravity? I can't put it down.",  
+        "What do u call a cheese thats not yours? Nacho cheese."
     ],
     "why do ducks have feathers": [
         "To cover their butt quacks."
@@ -197,9 +203,9 @@
         "Cuz you are dumb thats why." 
     ],
     "help": [
-        "@everyone help, {0}"
+        "You ain't getting any help, {0}"
     ],
-    "spin": [
+    "Russian roulette": [
         "Rikth is gay",
         "Tashfin is gay",
         "Sadman is gay",
@@ -210,19 +216,11 @@
     ],
     "bad bot": [
         " {0}, আমি তোমাকে মেরে ফেলবো"  
-    ],
-    "warframe": [
-        "Its a good game"
-    ],
-    "joke": [
-        " The bicycle was two tired to stand",
-        " The mexican magician said uno,dos and disappeared without a tres",
-        " The whiteboard is quite a REMARKABLE invention",
-        " Why does spider-man like the internet? Cuz its a WORLD WIDE WEB",
-        " Have u heard about the bookcalled gravity? I can't put it down.",
-        " What do u call a cheese thats not yours? Nacho cheese."
     ]
-}      
+}
+        
+
+
 
 
 
