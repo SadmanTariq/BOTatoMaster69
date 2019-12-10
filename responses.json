@@ -198,7 +198,32 @@
     ],
     "help": [
         "@everyone help, {0}"
+    ],
+    "spin": [
+        "Rikth is gay",
+        "Tashfin is gay",
+        "Sadman is gay",
+        "Mahadi is gay",
+        "Tahmid is gay",
+        "Everyone is gay",
+        "Nobody is gay"
+    ],
+    "bad bot": [
+        " {0}, আমি তোমাকে মেরে ফেলবো"  
+    ],
+    "warframe": [
+        "Its a good game"
+    ],
+    "joke": [
+        " The bicycle was two tired to stand",
+        " The mexican magician said uno,dos and disappeared without a tres",
+        " The whiteboard is quite a REMARKABLE invention",
+        " Why does spider-man like the internet? Cuz its a WORLD WIDE WEB",
+        " Have u heard about the bookcalled gravity? I can't put it down.",
+        " What do u call a cheese thats not yours? Nacho cheese."
     ]
-}
+}      
+
+
 
 
