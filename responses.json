@@ -205,7 +205,7 @@
     "help": [
         "You ain't getting any help, {0}"
     ],
-    "Russian roulette": [
+    "russian roulette": [
         "Rikth is gay",
         "Tashfin is gay",
         "Sadman is gay",
@@ -253,7 +253,7 @@
         "You miss 100% of the shots you never take.",
         "Use netherrack to build. They are faster to mine."
     ],
-    "Nuke someone": [
+    "nuke someone": [
         "Sadman got nuked.",
         "Tashfin got nuked.",
         "Tahmid got nuked.",
@@ -262,8 +262,20 @@
         "Jacob got nuked.",
         "Masrur got nuked.",
         "Fahim got nuked."
+    ],
+    "yo bot": [
+        "Wassup {0}"
+    ],
+    "are u ok": [
+        "Does he sound ok, {0}?"
+    ],
+    "got disconnected": [
+        "Too bad so, sad {0}"
     ]
 }
+
+        
+
 
         
 
