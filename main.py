@@ -3,6 +3,8 @@ from random import randint
 from os import environ
 import json
 
+import dadbot
+
 token_variable_name = "DISCORD_TOKEN"
 token = ""
 try:
@@ -46,10 +48,7 @@ async def on_message(message):
             await message.channel.send("Fuck off " + message.author.name)
 
     # DadBot clone:
-    if message.content.lower().startswith("i am"):
-        response = [message.content[i] for i in range(4, len(message.content))]
-        response = "".join(response)
-        await message.channel.send("Hi" + response)
+    await dadbot.dadbot(message)
 
     for trigger, response_list in responses.items():
         if message.content.lower().find(trigger) != -1:
