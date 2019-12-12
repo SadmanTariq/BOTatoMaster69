@@ -1,9 +1,11 @@
-# **This is an experimental version. Use at your own risk.**
+Click [here](https://discordapp.com/oauth2/authorize?client_id=593359969806712861&scope=bot&permissions=0) to invite to server.
 
-Click [here](https://discordapp.com/oauth2/authorize?client_id=593359969806712861&scope=bot&permissions=0) to invite to server
+# BOTatoMaster69 V2
+This is a general purpose discord bot for the KKK server. More features coming soon.
 
-# BOTatoMaster 69 V2
-This is an object oriented rewrite. More features coming soon.
+## About V2:
+This is an object oriented rewrite of V1.
+
 
 ## Editing responses:
 

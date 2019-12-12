@@ -5,6 +5,9 @@ import on_message_commands
 import calculator
 
 
+# The fuck you looking at?
+
+
 commands_list = [calculator.Calculator,
                  on_message_commands.Dadbot,
                  on_message_commands.Shutdown,
