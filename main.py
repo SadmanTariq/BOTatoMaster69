@@ -2,9 +2,11 @@ import discord  # noqa: F401
 from os import environ
 
 import on_message_commands
+import calculator
 
 
-commands_list = [on_message_commands.Dadbot,
+commands_list = [calculator.Calculator,
+                 on_message_commands.Dadbot,
                  on_message_commands.Shutdown,
                  on_message_commands.TriggerResponse]
 
