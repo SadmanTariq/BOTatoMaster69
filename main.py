@@ -1,61 +1,37 @@
 import discord  # noqa: F401
-from random import randint
 from os import environ
-import json
 
-import dadbot
+import on_message_commands
 
-token_variable_name = "DISCORD_TOKEN"
+
+commands_list = [on_message_commands.Dadbot,
+                 on_message_commands.Shutdown,
+                 on_message_commands.TriggerResponse]
+
+
+class OnMessageClient(discord.Client):
+    async def on_ready(self):
+        for command in commands_list:
+            command.init()
+        print("Ready.")
+
+    async def on_message(self, message):
+        if message.author == client.user:
+            return
+
+        for command in commands_list:
+            if command.exec_check(message):
+                await command.respond(message)
+                return
+
+
+TOKEN_VARIABLE_NAME = "DISCORD_TOKEN"
 token = ""
 try:
-    token = environ[token_variable_name]
+    token = environ[TOKEN_VARIABLE_NAME]
 except KeyError:
     print("Token variable not set. Quitting.")
     quit()
 
-
-client = discord.Client()
-
-authorized_user_ids = [340115550208262145]
-
-responses_json_path = "responses.json"
-responses = {}
-
-try:
-    with open(responses_json_path) as responses_json:
-        responses = json.load(responses_json)
-        print("Responses loaded.")
-except FileNotFoundError:
-    print(responses_json_path + "does not exist. Quitting.")
-    quit()
-
-
-@client.event
-async def on_ready():
-    print("Ready.")
-
-
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
-    if message.content == "!!shutdown":
-        if message.author.id in authorized_user_ids:
-            await message.channel.send("Shutting down my lord.")
-            quit()
-        else:
-            await message.channel.send("Fuck off " + message.author.name)
-
-    # DadBot clone:
-    await dadbot.dadbot(message)
-
-    for trigger, response_list in responses.items():
-        if message.content.lower().find(trigger) != -1:
-            response = response_list[randint(0, len(response_list) - 1)]
-            response = response.format(message.author.name)
-            print(trigger, response)
-            await message.channel.send(response)
-            return
-
+client = OnMessageClient()
 client.run(token)
