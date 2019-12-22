@@ -66,6 +66,11 @@ class Calculator(OnMessageCommands):
             await message.channel.send("Nigga that's no math.")
             return
 
-        response = f"The result is {cls._calculate(operation)}. "
-        response += f"Was that too hard for you, {message.author.name}?"
+        try:
+            response = f"The result is {cls._calculate(operation)}. "
+            response += f"Was that too hard for you, {message.author.name}?"
+        except ZeroDivisionError:
+            await message.channel.send("Stop trying to crash me you fuckturd.")
+            return
+
         await message.channel.send(response)
