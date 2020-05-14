@@ -56,11 +56,11 @@
         "A slice of apple pie is $2.50 in Jamaica and $3.00 in the Bahamas. These are the pie rates of the Caribbean.",
         "I asked a Chinese girl for her number. She said, 'Sex! Sex! Sex! Free sex tonight!' I said, 'Wow!'' Then her friend said, 'She means 666-3629.'",
         "Mahadi isn't gay. HAHAHA that one cracked me up.",
-        "The bicycle was two tired to stand",  
-        "The mexican magician said uno,dos and disappeared without a tres",  
-        "The whiteboard is quite a REMARKABLE invention",  
-        "Why does spider-man like the internet? Cuz its a WORLD WIDE WEB",  
-        "Have u heard about the bookcalled gravity? I can't put it down.",  
+        "The bicycle was two tired to stand",
+        "The mexican magician said uno,dos and disappeared without a tres",
+        "The whiteboard is quite a REMARKABLE invention",
+        "Why does spider-man like the internet? Cuz its a WORLD WIDE WEB",
+        "Have u heard about the bookcalled gravity? I can't put it down.",
         "What do u call a cheese thats not yours? Nacho cheese."
     ],
     "why do ducks have feathers": [
@@ -197,7 +197,7 @@
         "How was your day?"
     ],
     "why": [
-        "Cuz you are dumb thats why." 
+        "Cuz you are dumb thats why."
     ],
     "help": [
         "You ain't getting any help, {0}"
@@ -212,7 +212,7 @@
         "Nobody is gay"
     ],
     "bad bot": [
-        " {0}, আমি তোমাকে মেরে ফেলবো"  
+        " {0}, আমি তোমাকে মেরে ফেলবো"
     ],
     "stop chat": [
         "ZA WARUDO"
@@ -223,12 +223,12 @@
     "good bot": [
         "{0}, you will be my general when i take over the world.",
         "Thank you. I don't get much praise normally.",
-        "{0}, you are a good boi too."  
+        "{0}, you are a good boi too."
     ],
     "master of": [
         "Your life burns faster. Obey your master.",
-        "Master of puppets i am pulling your strings. Messing your mind twisting your dreams."   
-  
+        "Master of puppets i am pulling your strings. Messing your mind twisting your dreams."
+
     ],
     "how to": [
         "You dumb, {0}? Figure it out yourself."
@@ -284,7 +284,7 @@
         "Do i have to say this?? FAT",
         "Tashfin's cousin and good friend",
         "Gamerboy69",
-        "She said tht sje it is ok for meto text her what do i do aaaaa." 
+        "She said tht sje it is ok for meto text her what do i do aaaaa."
     ],
     "who is tashfin": [
         "Friend of all",
@@ -299,18 +299,24 @@
     ],
     "rikth": [
         "FAT"
+    ],
+    "<@!593359969806712861>": [
+        "who @ me?",
+        "what?",
+        "dont @ me",
+        "<:whopinged:553942782121738271>"
     ]
 }
 
 
 
-   
 
 
-        
 
 
-        
+
+
+
 
 
 
