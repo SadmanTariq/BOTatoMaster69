@@ -1,5 +1,6 @@
 import json
 from random import randint
+import discord.errors
 
 
 class OnMessageCommands():
@@ -36,9 +37,9 @@ class Dadbot(OnMessageCommands):
 
         for starter in cls.starter_variations:
             if text.startswith(starter):
-                response = text[len(starter):]  # After Starter to end
-                response = "Hi, " + response
-                return response
+                starterless = text[len(starter):]  # After Starter to end
+                response = "Hi, " + starterless
+                return response, starterless
 
         return None
 
@@ -52,10 +53,16 @@ class Dadbot(OnMessageCommands):
     @classmethod
     async def respond(cls, message):
         cls.on_call(message)
-        response = cls._prepare_response(message.content)
+        response, new_name = cls._prepare_response(message.content)
 
         if response is not None:
             await message.channel.send(response)
+
+        if new_name is not None:
+            try:
+                await message.author.edit(nick=new_name)
+            except discord.errors.Forbidden:
+                print("Missing nick permissions.")
 
 
 class Shutdown(OnMessageCommands):
