@@ -30,13 +30,14 @@ class OnMessageClient(discord.Client):
                 return
 
 
-TOKEN_VARIABLE_NAME = "DISCORD_TOKEN"
-token = ""
-try:
-    token = environ[TOKEN_VARIABLE_NAME]
-except KeyError:
-    print("Token variable not set. Quitting.")
-    quit()
+if __name__ == "__main__":
+    TOKEN_VARIABLE_NAME = "DISCORD_TOKEN"
+    token = ""
+    try:
+        token = environ[TOKEN_VARIABLE_NAME]
+    except KeyError:
+        print("Token variable not set. Quitting.")
+        quit()
 
-client = OnMessageClient()
-client.run(token)
+    client = OnMessageClient()
+    client.run(token)
