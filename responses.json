@@ -300,11 +300,16 @@
     "rikth": [
         "FAT"
     ],
+<<<<<<< HEAD
     "<@!593359969806712861>": [
         "who @ me?",
         "what?",
         "dont @ me",
         "<:whopinged:553942782121738271>"
+=======
+    "test": [
+         "Yes your internet works."
+>>>>>>> a974d4405d1f0ad13d6cf0945a602db5ae9ac878
     ]
 }
 
