@@ -238,6 +238,7 @@
     ],
     "stop chat": [
         "ZA WARUDO"
+        "STAR PLATINUM: ZA WARUDO"
     ],
     "you are useless": [
         "MUDA MUDA MUDA MUDA"
@@ -335,6 +336,26 @@
         "dont @ me",
         "<:whopinged:553942782121738271>"
     ],
+    "<@&712546728049639438>": [
+        "who @ me?",
+        "what?",
+        "dont @ me",
+        "<:whopinged:553942782121738271>"
+    ],
+       "**hugs BOTatoMaster69**": [
+        "???",
+        "??",
+        "pls",
+        "AAAAAAAAAAAAAAAAA"
+        "o-oh ok"
+    ],
+    "**punches BOTatoMaster69**": [
+        "**punches {0}**",
+        "f off",
+        "no bully",
+        "i hope someone close to you grabs you and scars your cheek with a name tag"
+        "i hope someone gives you an uppercut and makes ur nose bleed"
+    ],
     "test": [
          "Yes your internet works.",
          "Nope your internet gone. Clearly doesn't work."
@@ -346,11 +367,44 @@
          "U cant beat me."
     ],
     "gay": [
-         "Who you, {0}?"
+         "Who u, {0}?"
     ],
     "this is a tt function": [
           "U want to see this"
+    ],
+    "send doves": [
+          "https://www.youtube.com/watch?v=-ewN_NnQ3SU",
+          "https://www.youtube.com/watch?v=-qS77R0Y1K8",
+          "https://www.youtube.com/watch?v=SuLMpKx0LF0",
+          "https://www.youtube.com/watch?v=NqaVAEQyPjE"
+    ],
+    "send pigeons": [
+          "https://www.youtube.com/watch?v=wmz0vXyhJCs",
+          "https://www.youtube.com/watch?v=pjEZyltky4A",
+          "https://www.youtube.com/watch?v=emZSP6ixrg4",
+    ],
+     "send birds": [
+          "https://www.youtube.com/watch?v=wmz0vXyhJCs",
+          "https://www.youtube.com/watch?v=pjEZyltky4A",
+          "https://www.youtube.com/watch?v=emZSP6ixrg4",
+          "https://www.youtube.com/watch?v=-ewN_NnQ3SU",
+          "https://www.youtube.com/watch?v=-qS77R0Y1K8",
+          "https://www.youtube.com/watch?v=SuLMpKx0LF0",
+          "https://www.youtube.com/watch?v=NqaVAEQyPjE"
+    ],
+    "send signs": [
+          "https://minecraft.gamepedia.com/Sign",
+          "https://minecraft.fandom.com/wiki/Sign",
+          "https://minecraft.gamepedia.com/File:Oak_Standing_Sign.png",
+          "https://minecraft.gamepedia.com/File:Spruce_Standing_Sign.png",
+          "https://minecraft.gamepedia.com/File:Birch_Standing_Sign.png",
+          "https://minecraft.gamepedia.com/File:Jungle_Standing_Sign.png",
+          "https://minecraft.gamepedia.com/File:Acacia_Standing_Sign.png",
+          "https://minecraft.gamepedia.com/File:Dark_Oak_Standing_Sign.png",
+          "https://minecraft.gamepedia.com/File:Crimson_Standing_Sign_JE1_BE1.png",
+          "https://minecraft.gamepedia.com/File:Warped_Standing_Sign_JE1_BE1.png"
     ]
+    
 }
 
 
