@@ -357,11 +357,21 @@
         "i hope someone gives you an uppercut and makes ur nose bleed"
     ],
     "test": [
-         "Yes your internet works."
+         "Yes your internet works.",
+         "Nope your internet gone. Clearly doesn't work."
+    ],
+    "no u": [
+         "Fucking nine year olds."
+    ],
+    "brawlhalla": [
+         "U cant beat me."
+    ],
+    "gay": [
+         "Who u, {0}?"
     ],
     "this is a tt function": [
           "U want to see this"
-    ]
+    ],
 }
 
 
