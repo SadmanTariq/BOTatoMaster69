@@ -307,8 +307,21 @@
         "<:whopinged:553942782121738271>"
     ],
     "test": [
-         "Yes your internet works."
-    ]
+         "Yes your internet works.",
+         "Nope your internet gone.Clearly doesn't work."
+    ],
+    "no u": [
+         "Fucking nine year olds."
+    ],
+    "brawlhalla": [
+         "U cant beat me."
+    ],
+    "gay": [
+         "Who you, {0}?"
+    ],
+    "ga": [
+         "Who you, {0}?"
+      
 }
 
 
