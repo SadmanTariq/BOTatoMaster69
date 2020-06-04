@@ -14,23 +14,40 @@
         "fuck you {0}"
     ],
     "mahdi gey": [
-        "i agree"
+        "i agree",
+        "maybe"
+    ],
+        "mahadi gey": [
+        "i agree",
+        "maybe"
+    ],
+    "mahdi gay": [
+        "i agree",
+        "maybe"
+    ],
+    "mahadi gay": [
+        "i agree",
+         "maybe"
     ],
     "do black lives matter": [
-        "No"
+        "Yes"
     ],
     "what is the meaning of life": [
-        "Error file not found!!!"
+        "Error file not found!!!",
+        "The meaning of life is unique to each person, you will have to find your own answer."
     ],
     "hello": [
-        "Your existance is trivial"
+        "Your existance is trivial",
+        "Hi!!"
     ],
     "why are you gay": [
         "Because Mahadi",
-        "Don't you have anything better to do? "
+        "Don't you have anything better to do? ",
+        "Scientists are trying to find the answer"
     ],
     "why is mahdi gay": [
-        "Result of severe childhood trauma, and years of getting sexually abused by his brother."
+        "Result of severe childhood trauma, and years of getting sexually abused by his brother.",
+        "Don't say things like that!!"
     ],
     "mahdi": [
         "~~mahdi~~ mah**a**di",
@@ -76,7 +93,7 @@
         "https://www.youtube.com/watch?v=IwzUs1IMdyQ"
     ],
     "whats your view on Mahadi": [
-        "A mentally retarded homosexual."
+        "A very smart person"
     ],
     "how is the weather": [
         "Does it even matter? It's not like you're gonna get up from your lazy ass and go outside."
@@ -104,10 +121,10 @@
         "Mahadi"
     ],
     "what is masrur": [
-        "An empty husk of a human shell."
+        "An empty husk of a human being."
     ],
     "whats your view on autism": [
-        "If it can't think, put its head in the sink"
+        "They r humans 2"
     ],
     "whats your view on canibalism": [
         "If it can fight back, then its a fucking snack"
@@ -116,10 +133,10 @@
         "Yeetus that feetus"
     ],
     "whats your view on necrophilia": [
-        "If there's heat, its good enough for meat"
+        "If there's heat, it's good enough for meat and if u think this you will die first when I become the world emperor"
     ],
     "what to do if a girl doesn't give consent": [
-        "Kill her, then drill her"
+        "Respect her decision"
     ],
     "whats your view on mexicans": [
         "yeeto the latino",
@@ -178,20 +195,25 @@
         "tashfun"
     ],
     "tashfun": [
-        "~~tashfun~~ ta**sh**fin",
+        "~~tashfun~~",
+        "ta**sh**fin",
         "tadhin",
         "tashdin",
         "tashfun"
     ],
+    "saan": [ 
+     "sa**dm**an"
+    ],
     "i want to die": [
-        "Its ur life do it",
-        "u dont have the guts"
+        "Stop talking",
+        "not if I kill u first"
     ],
     "brilliant": [
         "Something that Tashfin is not."
     ],
     "good morning": [
-        "Shit. Why cant u sleep forever"
+        "Shit. Why cant u sleep forever",
+        "Good morning"
     ],
     "back": [
         "How was your day?"
@@ -234,7 +256,7 @@
         "You dumb, {0}? Figure it out yourself."
     ],
     "how do": [
-        "You dumb, {0}? Figure it out yourself."
+         "You dumb, {0}? Figure it out yourself."
     ],
     "ok boomer": [
         "Age is just a number."
@@ -295,12 +317,19 @@
     "who is mahadi": [
         "Gay",
         "Nothing",
-        "Fuck u"
+        "Fuck u",
+        "Pro gamer 44"
     ],
     "rikth": [
         "FAT"
     ],
-    "<@!593359969806712861>": [
+    "<@593359969806712861>": [
+        "who @ me?",
+        "what?",
+        "dont @ me",
+        "<:whopinged:553942782121738271>"
+    ],
+        "<@!593359969806712861>": [
         "who @ me?",
         "what?",
         "dont @ me",
@@ -308,7 +337,7 @@
     ],
     "test": [
          "Yes your internet works.",
-         "Nope your internet gone.Clearly doesn't work."
+         "Nope your internet gone. Clearly doesn't work."
     ],
     "no u": [
          "Fucking nine year olds."
@@ -319,9 +348,9 @@
     "gay": [
          "Who you, {0}?"
     ],
-    "ga": [
-         "Who you, {0}?"
-      
+    "this is a tt function": [
+          "U want to see this"
+    ]
 }
 
 
