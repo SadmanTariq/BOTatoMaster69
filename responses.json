@@ -336,9 +336,19 @@
         "<:whopinged:553942782121738271>"
     ],
     "test": [
-         "Yes your internet works."
+         "Yes your internet works.",
+         "Nope your internet gone. Clearly doesn't work."
     ],
-    "This is a tt function": [
+    "no u": [
+         "Fucking nine year olds."
+    ],
+    "brawlhalla": [
+         "U cant beat me."
+    ],
+    "gay": [
+         "Who you, {0}?"
+    ],
+    "this is a tt function": [
           "U want to see this"
     ]
 }
