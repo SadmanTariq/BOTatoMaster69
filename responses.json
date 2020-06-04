@@ -238,6 +238,7 @@
     ],
     "stop chat": [
         "ZA WARUDO"
+        "STAR PLATINUM: ZA WARUDO"
     ],
     "you are useless": [
         "MUDA MUDA MUDA MUDA"
@@ -335,10 +336,30 @@
         "dont @ me",
         "<:whopinged:553942782121738271>"
     ],
+    "<@&712546728049639438>": [
+        "who @ me?",
+        "what?",
+        "dont @ me",
+        "<:whopinged:553942782121738271>"
+    ],
+       "**hugs BOTatoMaster69**": [
+        "???",
+        "??",
+        "pls",
+        "AAAAAAAAAAAAAAAAA"
+        "o-oh ok"
+    ],
+    "**punches BOTatoMaster69**": [
+        "**punches {0}**",
+        "f off",
+        "no bully",
+        "i hope someone close to you grabs you and scars your cheek with a name tag"
+        "i hope someone gives you an uppercut and makes ur nose bleed"
+    ],
     "test": [
          "Yes your internet works."
     ],
-    "This is a tt function": [
+    "this is a tt function": [
           "U want to see this"
     ]
 }
