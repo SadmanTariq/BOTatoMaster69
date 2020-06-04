@@ -14,39 +14,39 @@
         "fuck you {0}"
     ],
     "mahdi gey": [
-        "i agree"
+        "i agree",
         "maybe"
     ],
         "mahadi gey": [
-        "i agree"
+        "i agree",
         "maybe"
     ],
     "mahdi gay": [
-        "i agree"
+        "i agree",
         "maybe"
     ],
     "mahadi gay": [
-        "i agree"
+        "i agree",
          "maybe"
     ],
     "do black lives matter": [
         "Yes"
     ],
     "what is the meaning of life": [
-        "Error file not found!!!"
+        "Error file not found!!!",
         "The meaning of life is unique to each person, you will have to find your own answer."
     ],
     "hello": [
-        "Your existance is trivial"
+        "Your existance is trivial",
         "Hi!!"
     ],
     "why are you gay": [
         "Because Mahadi",
-        "Don't you have anything better to do? "
+        "Don't you have anything better to do? ",
         "Scientists are trying to find the answer"
     ],
     "why is mahdi gay": [
-        "Result of severe childhood trauma, and years of getting sexually abused by his brother."
+        "Result of severe childhood trauma, and years of getting sexually abused by his brother.",
         "Don't say things like that!!"
     ],
     "mahdi": [
@@ -323,7 +323,13 @@
     "rikth": [
         "FAT"
     ],
-    "<@!593359969806712861>": [
+    "<@593359969806712861>": [
+        "who @ me?",
+        "what?",
+        "dont @ me",
+        "<:whopinged:553942782121738271>"
+    ],
+        "<@!593359969806712861>": [
         "who @ me?",
         "what?",
         "dont @ me",
@@ -332,7 +338,7 @@
     "test": [
          "Yes your internet works."
     ],
-    "This is a test function": [
+    "This is a tt function": [
           "U want to see this"
     ]
 }
