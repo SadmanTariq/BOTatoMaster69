@@ -1,4 +1,4 @@
-Click [here](https://discordapp.com/oauth2/authorize?client_id=593359969806712861&scope=bot&permissions=0) to invite to server.
+[Invite to server.](https://discord.com/api/oauth2/authorize?client_id=593359969806712861&permissions=201791552&scope=bot)
 
 # BOTatoMaster69 V2
 This is a general purpose discord bot for the KKK server. More features coming soon.
