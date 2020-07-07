@@ -3,12 +3,14 @@ from os import environ
 
 import on_message_commands
 import calculator
+import jokes
 
 
 # The fuck you looking at?
 
 
-commands_list = [calculator.Calculator,
+commands_list = [jokes.Jokes,
+                 calculator.Calculator,
                  on_message_commands.Dadbot,
                  on_message_commands.Shutdown,
                  on_message_commands.TriggerResponse]
