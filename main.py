@@ -13,6 +13,7 @@ commands_list = [jokes.Jokes,
                  calculator.Calculator,
                  on_message_commands.Dadbot,
                  on_message_commands.Shutdown,
+                 on_message_commands.RandomPing,
                  on_message_commands.TriggerResponse]
 
 

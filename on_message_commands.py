@@ -1,5 +1,7 @@
+from asyncio import sleep
 import json
 from random import randint
+import math
 import discord.errors
 
 
@@ -121,3 +123,36 @@ class TriggerResponse(OnMessageCommands):
                 print(f"Trigger: {trigger}, response: {response}")
                 await message.channel.send(response)
                 return
+
+
+class RandomPing(OnMessageCommands):
+    """Ping a random user on @someone"""
+
+    # @classmethod
+    # def init(cls):
+    #     pass
+
+    @classmethod
+    def exec_check(cls, message):
+        if message.content == "@someone":
+            return True
+        else:
+            return False
+
+    @classmethod
+    async def respond(cls, message):
+        cls.on_call(message)
+        
+        members = message.guild.members
+        iters = 4
+
+        random_member = lambda m: m[randint(0, len(members) - 1)]
+        duration = lambda i: math.exp(float(i) / 3.0) * 0.01
+
+        shuffling_message = await message.channel.send(random_member(members).name)
+        for i in range(iters):
+            await sleep(duration(i))
+            await shuffling_message.edit(content=random_member(members).name)
+        
+        await shuffling_message.delete()
+        await message.channel.send(random_member(members).mention)
