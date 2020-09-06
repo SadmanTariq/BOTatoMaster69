@@ -29,7 +29,7 @@ async def define(ctx: commands.Context, phrase: str):
 
     definition = urban(phrase)
     if definition.error:
-        ctx.send("wtf even is that")
+        await ctx.send("wtf even is that")
     else:
         await ctx.send(embed=definition.get_embed())
 
