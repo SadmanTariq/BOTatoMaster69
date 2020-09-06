@@ -62,6 +62,8 @@ def urban(phrase: str) -> Definition:
 
     definition.word = remove_brackets(data["word"])
     definition.definition = remove_brackets(data["definition"])
+    if len(definition.definition) > 256:
+        definition.definition = definition.definition[:250] + "..."
     definition.example = remove_brackets(data["example"])
 
     return definition
