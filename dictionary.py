@@ -25,7 +25,16 @@ class Definition:
 
 @commands.command()
 async def define(ctx: commands.Context, phrase: str):
-    ctx.send(embed=urban(phrase).get_embed())
+    print(ctx.author.name + ": " + ctx.message.content)
+
+    definition = urban(phrase)
+    if definition.error:
+        ctx.send("wtf even is that")
+    else:
+        await ctx.send(embed=definition.get_embed())
+
+define.description = "Gets the definition of your requested word from the most reputable dictionary on the internet, Urban Dictionary."
+define.brief = "Search for the definition of a word or a phrase."
 
 
 def urban(phrase: str) -> Definition:
@@ -47,9 +56,12 @@ def urban(phrase: str) -> Definition:
     except IndexError:
         definition.error = True
         return definition
+        
+    def remove_brackets(string: str) -> str:
+        return string.replace('[', '').replace(']', '')
 
-    definition.word = data["word"]
-    definition.definition = data["definition"]
-    definition.example = data["example"]
+    definition.word = remove_brackets(data["word"])
+    definition.definition = remove_brackets(data["definition"])
+    definition.example = remove_brackets(data["example"])
 
     return definition

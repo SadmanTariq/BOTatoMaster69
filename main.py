@@ -24,14 +24,20 @@ class Client(commands.Bot):
             command.init()
         print("Ready.")
 
-    # async def on_message(self, message):
-    #     if message.author == client.user:
-    #         return
+    async def on_message(self, message):
+        await commands.Bot.on_message(self, message)
 
-    #     for command in commands_list:
-    #         if command.exec_check(message):
-    #             await command.respond(message)
-    #             return
+        for command in self.commands:
+            if message.content.startswith(self.command_prefix + command.name):
+                return
+
+        if message.author == client.user:
+            return
+
+        for command in commands_list:
+            if command.exec_check(message):
+                await command.respond(message)
+                return
 
 
 if __name__ == "__main__":
