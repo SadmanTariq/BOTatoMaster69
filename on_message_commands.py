@@ -142,7 +142,7 @@ class RandomPing(OnMessageCommands):
     @classmethod
     async def respond(cls, message):
         cls.on_call(message)
-        
+
         members = message.guild.members
         iters = 4
 
@@ -153,6 +153,6 @@ class RandomPing(OnMessageCommands):
         for i in range(iters):
             await sleep(duration(i))
             await shuffling_message.edit(content=random_member(members).name)
-        
+
         await shuffling_message.delete()
         await message.channel.send(random_member(members).mention)

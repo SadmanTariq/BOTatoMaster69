@@ -1,10 +1,11 @@
-import discord  # noqa: F401
+# import discord
+from discord.ext import commands
 from os import environ
 
 import on_message_commands
 import calculator
 import jokes
-
+import dictionary
 
 # The fuck you looking at?
 
@@ -17,20 +18,20 @@ commands_list = [jokes.Jokes,
                  on_message_commands.TriggerResponse]
 
 
-class OnMessageClient(discord.Client):
+class Client(commands.Bot):
     async def on_ready(self):
         for command in commands_list:
             command.init()
         print("Ready.")
 
-    async def on_message(self, message):
-        if message.author == client.user:
-            return
+    # async def on_message(self, message):
+    #     if message.author == client.user:
+    #         return
 
-        for command in commands_list:
-            if command.exec_check(message):
-                await command.respond(message)
-                return
+    #     for command in commands_list:
+    #         if command.exec_check(message):
+    #             await command.respond(message)
+    #             return
 
 
 if __name__ == "__main__":
@@ -42,5 +43,6 @@ if __name__ == "__main__":
         print("Token variable not set. Quitting.")
         quit()
 
-    client = OnMessageClient()
+    client = Client(command_prefix='>')
+    client.add_command(dictionary.define)
     client.run(token)
