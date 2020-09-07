@@ -13,21 +13,21 @@ class Definition:
 
     def get_embed(self) -> discord.Embed:
         return discord.Embed.from_dict({
-            "title": self.word,
+            "title": self.word.capitalize(),
             "fields": [{
                         "name": self.part_of_speech +
                         (', ' if self.part_of_speech else '') +
                         self.definition,
-                        "value": self.example
+                        "value": self.example if self.example else "*N/A*"
                        }]
         })
 
 
 @commands.command()
-async def define(ctx: commands.Context, phrase: str):
+async def define(ctx: commands.Context, *args):
     print(ctx.author.name + ": " + ctx.message.content)
 
-    definition = urban(phrase)
+    definition = urban(" ".join(args))
     if definition.error:
         await ctx.send("wtf even is that")
     else:
@@ -56,14 +56,14 @@ def urban(phrase: str) -> Definition:
     except IndexError:
         definition.error = True
         return definition
-        
+
     def remove_brackets(string: str) -> str:
-        return string.replace('[', '').replace(']', '')
+        return string.replace('[', '').replace(']', '').replace('{', '').replace('}', '')  # noqa
 
     definition.word = remove_brackets(data["word"])
     definition.definition = remove_brackets(data["definition"])
     if len(definition.definition) > 256:
-        definition.definition = definition.definition[:250] + "..."
+        definition.definition = definition.definition[:253] + "..."
     definition.example = remove_brackets(data["example"])
 
     return definition
