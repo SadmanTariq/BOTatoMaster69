@@ -1,7 +1,7 @@
-from asyncio import sleep
+# from asyncio import sleep
 import json
 from random import randint
-import math
+# import math
 import discord.errors
 
 
@@ -143,16 +143,22 @@ class RandomPing(OnMessageCommands):
     async def respond(cls, message):
         cls.on_call(message)
 
-        members = message.guild.members
-        iters = 4
+        if randint(1, 100) > 20:
+            return
 
-        random_member = lambda m: m[randint(0, len(members) - 1)]
-        duration = lambda i: math.exp(float(i) / 3.0) * 0.01
+        await message.channel.send("This doesnt work anymore because Tahmid " +
+                                   "ruined it for everyone.")
 
-        shuffling_message = await message.channel.send(random_member(members).name)
-        for i in range(iters):
-            await sleep(duration(i))
-            await shuffling_message.edit(content=random_member(members).name)
+        # members = message.guild.members
+        # iters = 4
 
-        await shuffling_message.delete()
-        await message.channel.send(random_member(members).mention)
+        # random_member = lambda m: m[randint(0, len(members) - 1)]
+        # duration = lambda i: math.exp(float(i) / 3.0) * 0.01
+
+        # shuffling_message = await message.channel.send(random_member(members).name)  # noqa
+        # for i in range(iters):
+        #     await sleep(duration(i))
+        #     await shuffling_message.edit(content=random_member(members).name)
+
+        # await shuffling_message.delete()
+        # await message.channel.send(random_member(members).mention)
