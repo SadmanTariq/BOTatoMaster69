@@ -11,8 +11,8 @@ async def vote(ctx: commands.Context, member: Member):
         await ctx.message.delete()
     except errors.Forbidden:
         print("No manage messages perms.")
-    decision_line = f"{member.nick} was {'Not' if randrange(1) == 1 else ''} The Impostor."
-    response_text = (f"*{ctx.author.nick} has voted.*\n" +
+    decision_line = f"{member.name} was {'Not' if randrange(1) == 1 else ''} The Impostor."
+    response_text = (f"*{ctx.author.name} has voted.*\n" +
                      ".      　。　　　　•　    　ﾟ　　。\n" +
                      "　　.　　　.　　　  　　.　　　　　。　　   。　.\n" +
                      " 　.　　      。　        ඞ   。　    .    •\n" +
