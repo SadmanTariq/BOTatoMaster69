@@ -1,11 +1,16 @@
 from discord import Member
 from discord.ext import commands
+from discord import errors
 from random import randrange
 
 
 @commands.command()
 async def vote(ctx: commands.Context, member: Member):
-    await ctx.message.delete()
+    print("Vote " + ctx.author.name + ": " + ctx.message.content)
+    try:
+        await ctx.message.delete()
+    except errors.Forbidden:
+        print("No manage messages perms.")
     decision_line = f"{member.nick} was {'Not' if randrange(1) == 1 else ''} The Impostor."
     response_text = (f"*{ctx.author.nick} has voted.*\n" +
                      ".      　。　　　　•　    　ﾟ　　。\n" +
