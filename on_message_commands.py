@@ -1,7 +1,7 @@
-# from asyncio import sleep
+from asyncio import sleep
 import json
-from random import randint
-# import math
+from random import randrange
+from math import exp
 import discord.errors
 
 
@@ -118,7 +118,7 @@ class TriggerResponse(OnMessageCommands):
         cls.on_call(message)
         for trigger, response_list in cls._responses.items():
             if message.content.lower().find(trigger) != -1:
-                response = response_list[randint(0, len(response_list) - 1)]
+                response = response_list[randrange(len(response_list))]
                 response = response.format(message.author.name)
                 print(f"Trigger: {trigger}, response: {response}")
                 await message.channel.send(response)
@@ -142,23 +142,34 @@ class RandomPing(OnMessageCommands):
     @classmethod
     async def respond(cls, message):
         cls.on_call(message)
+        if randrange(10) < 3:  # 30% chance
+            await cls.on_success(message)
+        else:
+            await cls.on_fail(message)
 
-        if randint(1, 100) > 20:
-            return
+    @classmethod
+    async def on_success(cls, message):
+        members = message.guild.members
+        iters = 4
 
-        await message.channel.send("This doesnt work anymore because Tahmid " +
-                                   "ruined it for everyone.")
+        random_member = lambda m: m[randrange(len(members))]  # noqa: E731
+        duration = lambda i: exp(float(i) / 3.0) * 0.01  # noqa: E731
 
-        # members = message.guild.members
-        # iters = 4
+        shuffling_message = await message.channel.send(random_member(members).name)  # noqa
+        for i in range(iters):
+            await sleep(duration(i))
+            await shuffling_message.edit(content=random_member(members).name)
 
-        # random_member = lambda m: m[randint(0, len(members) - 1)]
-        # duration = lambda i: math.exp(float(i) / 3.0) * 0.01
+        await shuffling_message.delete()
+        await message.channel.send(random_member(members).mention)
 
-        # shuffling_message = await message.channel.send(random_member(members).name)  # noqa
-        # for i in range(iters):
-        #     await sleep(duration(i))
-        #     await shuffling_message.edit(content=random_member(members).name)
-
-        # await shuffling_message.delete()
-        # await message.channel.send(random_member(members).mention)
+    @classmethod
+    async def on_fail(cls, message):
+        try:
+            await message.delete()
+        except discord.errors.Forbidden:
+            response = await message.channel.send("No spam 😠.\nAlso mods pls give me Manage Messages permissions so that I can auto delete these.")  # noqa: E501
+            await response.delete(delay=5)
+        else:
+            response = await message.channel.send("No spam 😠.")
+            await response.delete(delay=5)
