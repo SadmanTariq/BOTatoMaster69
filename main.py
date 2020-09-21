@@ -6,6 +6,7 @@ import on_message_commands
 import calculator
 import jokes
 import dictionary
+import vote_command
 
 # The fuck you looking at?
 
@@ -51,4 +52,5 @@ if __name__ == "__main__":
 
     client = Client(command_prefix='>')
     client.add_command(dictionary.define)
+    client.add_command(vote_command.vote)
     client.run(token)
