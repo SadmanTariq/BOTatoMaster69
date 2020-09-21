@@ -1,7 +1,7 @@
 from discord import Member
 from discord.ext import commands
 from discord import errors
-from random import randrange
+from random import randint
 
 
 @commands.command()
@@ -11,7 +11,7 @@ async def vote(ctx: commands.Context, member: Member):
         await ctx.message.delete()
     except errors.Forbidden:
         print("No manage messages perms.")
-    decision_line = f"{member.mention} was {'Not' if randrange(1) == 1 else ''} The Impostor."
+    decision_line = f"{member.mention} was {'Not' if randint(0, 1) == 1 else ''} The Impostor."
     response_text = (f"*{ctx.author.mention} has voted.*\n" +
                      ".      　。　　　　•　    　ﾟ　　。\n" +
                      "　　.　　　.　　　  　　.　　　　　。　　   。　.\n" +
