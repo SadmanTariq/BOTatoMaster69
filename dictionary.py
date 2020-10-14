@@ -15,8 +15,8 @@ class Definition:
         return discord.Embed.from_dict({
             "title": self.word.capitalize(),
             "fields": [{
-                        "name": self.part_of_speech if self.part_of_speech else "-",
-                        "value": f"{self.definition}\n*{self.example}*" 
+                        "name": self.definition if self.definition else '-',
+                        "value": self.example 
                        }]
         })
 
@@ -60,8 +60,11 @@ def urban(phrase: str) -> Definition:
 
     definition.word = remove_brackets(data["word"])
     definition.definition = remove_brackets(data["definition"])
-#    if len(definition.definition) > 256:
-#        definition.definition = definition.definition[:253] + "..."
     definition.example = remove_brackets(data["example"])
+
+    if len(definition.definition) > 256:
+        definition.example = f"**{definition.definition}**\n*{definition.example}*"
+        definition.definition = ""
+        # definition.definition = definition.definition[:253] + "..."
 
     return definition
