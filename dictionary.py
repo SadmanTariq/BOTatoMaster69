@@ -15,8 +15,7 @@ class Definition:
         return discord.Embed.from_dict({
             "title": self.word.capitalize(),
             "fields": [{
-                        "name": self.part_of_speech +
-                            (', ' if self.part_of_speech else ''),
+                        "name": self.part_of_speech if self.part_of_speech else "-",
                         "value": f"{self.definition}\n*{self.example}*" 
                        }]
         })
