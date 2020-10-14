@@ -16,7 +16,7 @@ class Definition:
             "title": self.word.capitalize(),
             "fields": [{
                         "name": self.part_of_speech +
-                        (', ' if self.part_of_speech else '')
+                            (', ' if self.part_of_speech else ''),
                         "value": f"{self.definition}\n*{self.example}*" 
                        }]
         })
