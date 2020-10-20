@@ -1,6 +1,6 @@
 from asyncio import sleep
 import json
-from random import randrange
+from random import randrange, randint
 from math import exp
 import discord.errors
 
@@ -173,3 +173,33 @@ class RandomPing(OnMessageCommands):
         else:
             response = await message.channel.send("No spam 😠.")
             await response.delete(delay=5)
+
+
+class MahdiOk(OnMessageCommands):
+    """ Responds to when Mahdi says ok """
+
+#     @classmethod
+#     def init(cls):
+#         pass
+
+#     @classmethod
+#     def on_call(cls, message):
+#         print(f"{cls.__name__}, {message.author.name}: {message.content}")
+
+    @classmethod
+    def exec_check(cls, message):
+        return message.content.lower().strip() == "ok"
+
+    @classmethod
+    async def respond(cls, message):
+        cls.on_call(message)
+        MAHDI_ID = 396236347171667970
+        if message.author.id == MAHDI_ID:
+            print("Responded")
+            await message.channel.send("Yes we get it you exist")
+        else:
+            print("Responded neg")
+            if randint(1, 10) <= 2:  # 20% chance
+                print("Responded negpos")
+                await message.channel.send("This only works" +
+                                           " for Mahdi you moron")
