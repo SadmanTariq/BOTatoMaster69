@@ -201,5 +201,5 @@ class MahdiOk(OnMessageCommands):
             print("Responded neg")
             if randint(1, 10) <= 2:  # 20% chance
                 print("Responded negpos")
-                await message.channel.send("This only works" +
-                                           " for Mahdi you moron")
+                # await message.channel.send("This only works" +
+                #                            " for Mahdi you moron")
