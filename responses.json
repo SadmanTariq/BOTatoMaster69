@@ -259,6 +259,12 @@
     "how do": [
          "You dumb, {0}? Figure it out yourself."
     ],
+    "i need": [
+	 "No you don't."
+    ],
+    "i want": [
+	 "No you don't."
+    ],
     "ok boomer": [
         "Age is just a number."
     ],
