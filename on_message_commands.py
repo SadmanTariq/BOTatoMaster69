@@ -56,7 +56,7 @@ class Dadbot(OnMessageCommands):
     async def respond(cls, message):
         cls.on_call(message)
 
-        if randrange(10) < 3:  # 3 in 10
+        if randrange(10) < 5:  # 5 in 10
             await message.channel.send("No you're not.")
             return
 
