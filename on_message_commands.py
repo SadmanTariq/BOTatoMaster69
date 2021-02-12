@@ -202,3 +202,17 @@ class MahdiOk(OnMessageCommands):
         if message.author.id == MAHDI_ID:
             # print("Responded")
             await message.channel.send("Yes we get it you exist")
+
+
+class RikthPlayHollowKnight(OnMessageCommands):
+    """Rikth play Hollow Knight 😤"""
+    RIKTH_ID = 190756291558375424
+
+    @classmethod
+    def exec_check(cls, message):
+        return message.author.id == cls.RIKTH_ID and randrange(10) < 2
+
+    @classmethod
+    async def respond(cls, message):
+        cls.on_call(message)
+        await message.channel.send("Rikth play Hollow Knight 😤")
