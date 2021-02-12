@@ -200,11 +200,5 @@ class MahdiOk(OnMessageCommands):
         cls.on_call(message)
         MAHDI_ID = 396236347171667970
         if message.author.id == MAHDI_ID:
-            print("Responded")
+            # print("Responded")
             await message.channel.send("Yes we get it you exist")
-        else:
-            print("Responded neg")
-            if randint(1, 10) <= 2:  # 20% chance
-                print("Responded negpos")
-                await message.channel.send("This only works" +
-                                           " for Mahdi you moron")
