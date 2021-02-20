@@ -17,8 +17,8 @@ commands_list = [jokes.Jokes,
                  on_message_commands.Dadbot,
                  on_message_commands.Shutdown,
                  on_message_commands.RandomPing,
-                 on_message_commands.TriggerResponse,
-                 on_message_commands.RikthPlayHollowKnight]
+                 on_message_commands.TriggerResponse]
+#                 on_message_commands.RikthPlayHollowKnight]
 
 
 class Client(commands.Bot):
