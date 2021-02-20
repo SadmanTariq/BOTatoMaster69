@@ -259,6 +259,12 @@
     "how do": [
          "You dumb, {0}? Figure it out yourself."
     ],
+    "i needed": [
+	 "No you didn't."
+    ],
+    "i wanted": [
+	 "No you didn't."
+    ],
     "i need": [
 	 "No you don't."
     ],
