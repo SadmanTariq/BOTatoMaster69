@@ -216,3 +216,16 @@ class RikthPlayHollowKnight(OnMessageCommands):
     async def respond(cls, message):
         cls.on_call(message)
         await message.channel.send("Rikth play Hollow Knight 😤")
+
+class TashfinReadRoW(OnMessageCommands):
+    """Tashfin read RoW 😤😠😡"""
+    TASHFIN_ID = 232798874652246016
+
+    @classmethod
+    def exec_check(cls, message):
+        return message.author.id == cls.TASHFIN_ID and randrange(10) < 2
+
+    @classmethod
+    async def respond(cls, message):
+        cls.on_call(message)
+        await message.channel.send("Tashfin read RoW 😤😠😡")
