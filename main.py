@@ -8,7 +8,7 @@ import jokes
 import dictionary
 import vote_command
 
-# The fuck you looking at?
+# The fuck you looking at? Im looking at ur mum saan
 
 
 commands_list = [jokes.Jokes,
@@ -17,7 +17,8 @@ commands_list = [jokes.Jokes,
                  on_message_commands.Dadbot,
                  on_message_commands.Shutdown,
                  on_message_commands.RandomPing,
-                 on_message_commands.TriggerResponse]
+                 on_message_commands.TriggerResponse,
+                 on_message_commands.TashfinReadRoW]
 #                 on_message_commands.RikthPlayHollowKnight]
 
 
