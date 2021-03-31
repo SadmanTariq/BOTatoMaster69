@@ -1,4 +1,4 @@
-# import discord
+import discord
 from discord.ext import commands
 from os import environ
 
@@ -10,6 +10,7 @@ import vote_command
 
 # The fuck you looking at? Im looking at ur mum saan
 
+client = discord.Client()
 
 commands_list = [jokes.Jokes,
                  calculator.Calculator,
@@ -57,3 +58,9 @@ if __name__ == "__main__":
     client.add_command(dictionary.define)
     client.add_command(vote_command.vote)
     client.run(token)
+
+#deletes tahmids T
+@client.event
+async def on_message(message):
+    if  message.content == "t" and message.author.id == 350481107256606720 and str(message.channel) == "general-koolkids":
+        await message.channel.purge(limit=1)
