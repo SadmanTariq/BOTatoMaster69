@@ -11,15 +11,17 @@ import vote_command
 # The fuck you looking at? Im looking at ur mum saan
 
 
-commands_list = [jokes.Jokes,
-                 calculator.Calculator,
-                 on_message_commands.MahdiOk,
-                 on_message_commands.Dadbot,
-                 on_message_commands.Shutdown,
-                 on_message_commands.RandomPing,
-                 on_message_commands.TriggerResponse,
-                 on_message_commands.TashfinReadRoW]
-#                 on_message_commands.RikthPlayHollowKnight]
+commands_list = [
+    jokes.Jokes,
+    calculator.Calculator,
+    on_message_commands.MahdiOk,
+    on_message_commands.Dadbot,
+    on_message_commands.Shutdown,
+    on_message_commands.RandomPing,
+    on_message_commands.TriggerResponse,
+    on_message_commands.TashfinReadRoW,
+    on_message_commands.AbsoluteEvil
+]
 
 
 class Client(commands.Bot):

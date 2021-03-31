@@ -229,3 +229,22 @@ class TashfinReadRoW(OnMessageCommands):
     async def respond(cls, message):
         cls.on_call(message)
         await message.channel.send("Tashfin read RoW 😤😠😡")
+
+class AbsoluteEvil(OnMessageCommands):
+    TAHMID_ID = 350481107256606720
+
+    @classmethod
+    def exec_check(cls, message):
+        if message.author.id == cls.TAHMID_ID:
+            for c in message.content.lower():
+                if c != 't':
+                    return False
+
+            return randrange(10) < 3
+
+        return False
+
+    @classmethod
+    async def respond(cls, message):
+        cls.on_call(message)
+        await message.delete()
