@@ -236,6 +236,9 @@ class AbsoluteEvil(OnMessageCommands):
     @classmethod
     def exec_check(cls, message):
         if message.author.id == cls.TAHMID_ID:
+            if message.content = '':
+                return False
+
             for c in message.content.lower():
                 if c != 't':
                     return False
