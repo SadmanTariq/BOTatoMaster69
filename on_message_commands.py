@@ -230,24 +230,23 @@ class TashfinReadRoW(OnMessageCommands):
         cls.on_call(message)
         await message.channel.send("Tashfin read RoW 😤😠😡")
 
-class AbsoluteEvil(OnMessageCommands):
-    TAHMID_ID = 350481107256606720
+class TtTest(OnMessageCommands):
+    """If the message is some variation of tt, tTtT, t etc. then send ttt and delete the original message after 5 seconds."""
 
     @classmethod
     def exec_check(cls, message):
-        if message.author.id == cls.TAHMID_ID:
-            if message.content = '':
+        if message.content == '':
+            return False
+
+        for c in message.content.lower():
+            if c != 't':
                 return False
-
-            for c in message.content.lower():
-                if c != 't':
-                    return False
-
-            return randrange(10) < 3
-
-        return False
+            
+        return True
 
     @classmethod
     async def respond(cls, message):
         cls.on_call(message)
-        await message.delete()
+        resp = await message.channel.send('t' * (len(message.content) * 2))
+        await resp.delete(delay=5)
+        await message.delete(delay=5)
