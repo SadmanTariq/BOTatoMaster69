@@ -3,6 +3,7 @@ import json
 from random import randrange, randint
 from math import exp
 import discord.errors
+import string
 
 
 class OnMessageCommands():
@@ -235,18 +236,24 @@ class TtTest(OnMessageCommands):
 
     @classmethod
     def exec_check(cls, message):
-        if message.content == '':
+        stripped = ''
+        for c in message.content.lower().strip():
+            if c not in string.punctuation + string.whitespace:
+                stripped += c
+
+        if stripped == '':
             return False
 
-        for c in message.content.lower():
-            if c != 't':
+        for c in stripped:
+            if c not in 't':
                 return False
-            
+
         return True
 
     @classmethod
     async def respond(cls, message):
         cls.on_call(message)
-        resp = await message.channel.send('t' * (len(message.content) * 2))
-        await resp.delete(delay=5)
+
         await message.delete(delay=5)
+        resp = await message.channel.send('t' * (2000 if len(message.content) * 2 > 2000 else len(message.content) * 2))
+        await resp.delete(delay=5)
