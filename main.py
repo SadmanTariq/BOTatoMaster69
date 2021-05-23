@@ -20,7 +20,8 @@ commands_list = [
     on_message_commands.RandomPing,
     on_message_commands.TtTest,
     on_message_commands.TashfinReadRoW,
-    on_message_commands.TriggerResponse
+    on_message_commands.TriggerResponse,
+    on_message_commands.TashfinDontForgetLaptop
 ]
 
 

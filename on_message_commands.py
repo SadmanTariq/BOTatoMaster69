@@ -224,7 +224,7 @@ class TashfinReadRoW(OnMessageCommands):
 
     @classmethod
     def exec_check(cls, message):
-        return message.author.id == cls.TASHFIN_ID and randrange(10) < 2
+        return message.author.id == cls.TASHFIN_ID and randrange(10) < 1
 
     @classmethod
     async def respond(cls, message):
@@ -257,3 +257,16 @@ class TtTest(OnMessageCommands):
         await message.delete(delay=5)
         resp = await message.channel.send('t' * (2000 if len(message.content) * 2 > 2000 else len(message.content) * 2))
         await resp.delete(delay=5)
+
+class TashfinDontForgetLaptop(OnMessageCommands):
+    """Tashfin DONT FUCKING FORGET LAPTOP 😤😤😤😤😤😤😤😤😤"""
+    TASHFIN_ID = 232798874652246016
+
+    @classmethod
+    def exec_check(cls, message):
+        return message.author.id == cls.TASHFIN_ID
+
+    @classmethod
+    async def respond(cls, message):
+        cls.on_call(message)
+        await message.channel.send("Tashfin DONT FUCKING FORGET LAPTOP 😤😤😤😤😤😤😤😤😤")
