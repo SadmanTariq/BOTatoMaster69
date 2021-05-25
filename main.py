@@ -9,7 +9,7 @@ import dictionary
 import vote_command
 
 # The fuck you looking at? Im looking at ur mum saan
-
+#on_message_commands.TashfinDontForgetLaptop
 
 commands_list = [
     jokes.Jokes,
@@ -20,8 +20,7 @@ commands_list = [
     on_message_commands.RandomPing,
     on_message_commands.TtTest,
     on_message_commands.TashfinReadRoW,
-    on_message_commands.TriggerResponse,
-    on_message_commands.TashfinDontForgetLaptop
+    on_message_commands.TriggerResponse
 ]
 
 
