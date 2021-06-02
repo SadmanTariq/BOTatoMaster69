@@ -7,6 +7,6 @@ discord.py==1.3.4
 idna==2.10
 multidict==4.7.6
 requests==2.24.0
-urllib3==1.25.10
+urllib3==1.26.5
 websockets==8.1
 yarl==1.5.1
