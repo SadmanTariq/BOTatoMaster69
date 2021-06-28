@@ -126,6 +126,7 @@ dmypy.json
 # VS Code
 *.code-workspace
 launch.json
+.vscode/
 
 # Discord app token
 token
