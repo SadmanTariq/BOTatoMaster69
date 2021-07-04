@@ -1,31 +1,58 @@
+import json
 import re
+import random
 from on_message_commands import OnMessageCommands
-from random import randrange
 
 
 class TriggerResponse(OnMessageCommands):
+    """If a message contains a trigger from responses.json then reply
+    with a randomly selected response for that trigger."""
+
+    _triggers = []
+
     @classmethod
     def init(cls):
-        pass
+        # json is temporary and will soon be replaced with a database.
+        responses_json = 'responses.json'
+        try:
+            with open(responses_json) as f:
+                for key, value in json.load(f).items():
+                    cls._triggers.append(Trigger(key, value))
+
+        except FileNotFoundError:
+            print(responses_json, "does not exist. Quitting.")
+            quit()
 
     @classmethod
     def exec_check(cls, message) -> bool:
-        return True
+        for t in cls._triggers:
+            if t.match(message):
+                return True
+        return False
 
     @classmethod
-    def respond(cls, message):
-        pass
+    async def respond(cls, message):
+        for t in cls._triggers:
+            if t.match(message):
+                await t.respond(message)
 
 
 class Trigger():
+    """Represents a triger."""
+
     # match "ok" and sender UID and random 10 and (channel ID or channel ID2)
     # "ok" match UID sender 10 random ID channel ID2 channel or and and and
 
-    def __init__(self, rpn) -> None:
+    responses = []
+
+    def __init__(self, rpn: str, responses) -> None:
         self.rpn = rpn
         self.selector_root = self._root_from_rpn(rpn)
+        self.responses = responses
 
     def _root_from_rpn(self, rpn):
+        """Generate binary tree root from rpn expression."""
+
         selectors = {
             'match': Match,
             'sender': Sender,
@@ -52,8 +79,13 @@ class Trigger():
     def match(self, message) -> bool:
         return self.selector_root.execute(message)
 
+    async def respond(self, message):
+        await message.channel.send(random.choice(self.responses))
+
 
 class Selector:
+    """Base class for selectors."""
+
     num_args = 0
     _args = []
 
@@ -69,6 +101,8 @@ class Selector:
 
 
 class Match(Selector):
+    """Matches regex."""
+
     num_args = 1
 
     def __init__(self, *args) -> None:
@@ -80,6 +114,8 @@ class Match(Selector):
 
 
 class Sender(Selector):
+    """Checks who the sender of a message is."""
+
     num_args = 1
 
     def execute(self, message) -> bool:
@@ -87,13 +123,17 @@ class Sender(Selector):
 
 
 class Random(Selector):
+    """Random chance."""
+
     num_args = 1
 
     def execute(self, message) -> bool:
-        return randrange(self._get_arg(0)) == 0
+        return random.randrange(self._get_arg(0)) == 0
 
 
 class And(Selector):
+    """Boolean 'and'."""
+
     num_args = 2
 
     def execute(self, message) -> bool:
@@ -101,6 +141,7 @@ class And(Selector):
 
 
 class Or(Selector):
+    """Boolean 'or'."""
     num_args = 2
 
     def execute(self, message) -> bool:

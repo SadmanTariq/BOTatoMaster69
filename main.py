@@ -7,6 +7,7 @@ import calculator
 import jokes
 import dictionary
 import vote_command
+import trigger_response
 
 # The fuck you looking at? Im looking at ur mum saan
 
@@ -20,7 +21,8 @@ commands_list = [
     on_message_commands.RandomPing,
     on_message_commands.TtTest,
     on_message_commands.TashfinReadRoW,
-    on_message_commands.TriggerResponse
+    trigger_response.TriggerResponse
+    # on_message_commands.TriggerResponse
 ]
 
 
