@@ -26,6 +26,7 @@ class TriggerResponse(OnMessageCommands):
 
     @classmethod
     async def respond(cls, message):
+        cls.on_call(message)
         for t in cls._triggers:
             if t.match(message):
                 await t.respond(message)
@@ -113,7 +114,7 @@ class Sender(Selector):
     num_args = 1
 
     def execute(self, message) -> bool:
-        return message.author.id == self._get_arg(0)
+        return message.author.id == int(self._get_arg(0))
 
 
 class Random(Selector):
@@ -122,7 +123,7 @@ class Random(Selector):
     num_args = 1
 
     def execute(self, message) -> bool:
-        return random.randrange(self._get_arg(0)) == 0
+        return random.randrange(int(self._get_arg(0))) == 0
 
 
 class And(Selector):
