@@ -1,27 +1,21 @@
-import json
+# import json
 import re
 import random
+from database import db
 from on_message_commands import OnMessageCommands
 
 
 class TriggerResponse(OnMessageCommands):
-    """If a message contains a trigger from responses.json then reply
-    with a randomly selected response for that trigger."""
+    """If a message contains a trigger then reply with a randomly selected
+    response for that trigger."""
 
     _triggers = []
 
     @classmethod
     def init(cls):
-        # json is temporary and will soon be replaced with a database.
-        responses_json = 'responses.json'
-        try:
-            with open(responses_json) as f:
-                for key, value in json.load(f).items():
-                    cls._triggers.append(Trigger(key, value))
-
-        except FileNotFoundError:
-            print(responses_json, "does not exist. Quitting.")
-            quit()
+        # Load triggers from database.
+        for trigger, responses in db.get_triggers().items():
+            cls._triggers.append(Trigger(trigger, responses))
 
     @classmethod
     def exec_check(cls, message) -> bool:
@@ -38,7 +32,7 @@ class TriggerResponse(OnMessageCommands):
 
 
 class Trigger():
-    """Represents a triger."""
+    """Represents a trigger."""
 
     # match "ok" and sender UID and random 10 and (channel ID or channel ID2)
     # "ok" match UID sender 10 random ID channel ID2 channel or and and and
