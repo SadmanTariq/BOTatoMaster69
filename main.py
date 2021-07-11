@@ -12,6 +12,7 @@ import trigger_response
 
 
 COMMANDS = [
+    trigger_response.ReloadTriggers,
     jokes.Jokes,
     calculator.Calculator,
     on_message_commands.Dadbot,
