@@ -16,6 +16,7 @@ class TriggerResponse(OnMessageCommands):
     @classmethod
     def init(cls):
         # Load triggers from database.
+        cls._triggers = []
         for trigger, responses in db.get_triggers().items():
             cls._triggers.append(Trigger(trigger, responses))
 
@@ -188,3 +189,23 @@ class Or(Selector):
 
 class InvalidRpnError(Exception):
     """Provided rpn string is invalid."""
+
+
+class ReloadTriggers(OnMessageCommands):
+    """Reloads triggers from database."""
+
+    _authorized_user_ids = [340115550208262145]
+
+    @classmethod
+    def exec_check(cls, message):
+        return message.content == "!!reload_db"
+
+    @classmethod
+    async def respond(cls, message):
+        cls.on_call(message)
+        if message.author.id in cls._authorized_user_ids:
+            await message.channel.send("Reloading...")
+            TriggerResponse.init()
+            await message.channel.send("Done.")
+        else:
+            await message.channel.send("Fuck off " + message.author.name)
