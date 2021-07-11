@@ -1,6 +1,7 @@
 # import json
 import re
 import random
+from datetime import datetime as dt, timedelta as td, timezone as tz
 from database import db
 from on_message_commands import OnMessageCommands
 
@@ -52,6 +53,14 @@ class Trigger():
 
     responses = []
 
+    _substitution_map = {
+        'sender_ping': lambda x: x.author.mention,
+        'time': lambda *x: dt.now(tz(td(
+                   hours=int(x[1]) if len(x) > 1 else None
+               ))).strftime('%I:%M %p, %Z' if len(x) < 3 else x[2]),
+        'sender_name': lambda x: x.author.name
+    }
+
     def __init__(self, rpn: str, responses) -> None:
         self.rpn = rpn
         self.selector_root = self._root_from_rpn(rpn)
@@ -93,9 +102,23 @@ class Trigger():
                 weighted.append(r)
 
         response = random.choice(weighted)
+
+        subbed = response['response']
+        for s in re.findall(r'(?<=<<).+?(?=>>)', subbed):
+            t = s.strip().split()
+            if t[0] in self._substitution_map.keys():
+                if len(t) == 1:
+                    subbed = self._substitution_map[t[0]](message).join(
+                        subbed.split('<<'+s+'>>')
+                    )
+
+                else:
+                    subbed = (self._substitution_map[t[0]](message, *t[1:])
+                              .join(subbed.split('<<'+s+'>>')))
+
         await message.channel.send(
-            response['response'],
-            reference=message if response['as_reply'] else None)
+            subbed, reference=message if response['as_reply'] else None
+        )
 
 
 class Selector:
