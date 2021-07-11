@@ -1,3 +1,4 @@
+import discord
 from discord.ext import commands
 
 from database import db
@@ -44,7 +45,10 @@ class Client(commands.Bot):
 
 
 if __name__ == "__main__":
-    client = Client(command_prefix='>')
+    intents = discord.Intents.default()
+    intents.members = True
+
+    client = Client(command_prefix='>', intents=intents)
     client.add_command(dictionary.define)
     client.add_command(vote_command.vote)
     client.run(db.get_api_key('Discord'))
