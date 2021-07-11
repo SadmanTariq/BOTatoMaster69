@@ -148,7 +148,7 @@ class Match(Selector):
         self.pattern = re.compile(args[0])
 
     def execute(self, message) -> bool:
-        return bool(self.pattern.match(message.content.lower()))
+        return len(self.pattern.findall(message.content.lower())) > 0
 
 
 class Sender(Selector):
