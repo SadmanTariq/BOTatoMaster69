@@ -10,6 +10,7 @@ class TriggerResponse(OnMessageCommands):
     response for that trigger."""
 
     _triggers = []
+    _cache = {}
 
     @classmethod
     def init(cls):
@@ -21,14 +22,25 @@ class TriggerResponse(OnMessageCommands):
     def exec_check(cls, message) -> bool:
         for t in cls._triggers:
             if t.match(message):
+                cls._cache[message] = t
                 return True
         return False
 
     @classmethod
     async def respond(cls, message):
         cls.on_call(message)
+
+        # Prevent triggers from recalculating unless necessary.
+        if message in cls._cache:
+            print(cls._cache[message].rpn)
+
+            await cls._cache[message].respond(message)
+            del cls._cache[message]
+            return
+
         for t in cls._triggers:
             if t.match(message):
+                print(t.rpn)
                 await t.respond(message)
 
 
