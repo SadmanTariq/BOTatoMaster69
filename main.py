@@ -1,4 +1,3 @@
-# import discord
 from discord.ext import commands
 from os import environ
 
@@ -9,10 +8,8 @@ import dictionary
 import vote_command
 import trigger_response
 
-# The fuck you looking at? Im looking at ur mum saan
 
-
-commands_list = [
+COMMANDS = [
     jokes.Jokes,
     calculator.Calculator,
     on_message_commands.Dadbot,
@@ -25,7 +22,7 @@ commands_list = [
 
 class Client(commands.Bot):
     async def on_ready(self):
-        for command in commands_list:
+        for command in COMMANDS:
             command.init()
         print("Ready.")
 
@@ -39,7 +36,7 @@ class Client(commands.Bot):
         if message.author == client.user:
             return
 
-        for command in commands_list:
+        for command in COMMANDS:
             if command.exec_check(message):
                 await command.respond(message)
                 return
