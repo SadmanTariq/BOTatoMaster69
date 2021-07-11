@@ -1,5 +1,6 @@
 from discord.ext import commands
-from os import environ
+
+from database import db
 
 import on_message_commands
 import calculator
@@ -43,15 +44,7 @@ class Client(commands.Bot):
 
 
 if __name__ == "__main__":
-    TOKEN_VARIABLE_NAME = "DISCORD_TOKEN"
-    token = ""
-    try:
-        token = environ[TOKEN_VARIABLE_NAME]
-    except KeyError:
-        print("Token variable not set. Quitting.")
-        quit()
-
     client = Client(command_prefix='>')
     client.add_command(dictionary.define)
     client.add_command(vote_command.vote)
-    client.run(token)
+    client.run(db.get_api_key('Discord'))

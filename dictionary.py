@@ -1,3 +1,5 @@
+from database import db
+
 import discord
 from discord.ext import commands
 import requests
@@ -16,7 +18,7 @@ class Definition:
             "title": self.word.capitalize(),
             "fields": [{
                         "name": self.definition if self.definition else '-',
-                        "value": self.example 
+                        "value": self.example
                        }]
         })
 
@@ -31,8 +33,10 @@ async def define(ctx: commands.Context, *args):
     else:
         await ctx.send(embed=definition.get_embed())
 
-define.description = "Gets the definition of your requested word from the most reputable dictionary on the internet, Urban Dictionary."
+define.description = "Gets the definition of your requested word from the most reputable dictionary on the internet, Urban Dictionary."  # noqa
 define.brief = "Search for the definition of a word or a phrase."
+
+urban_dict_key = db.get_api_key('UrbanDictionary')
 
 
 def urban(phrase: str) -> Definition:
@@ -44,7 +48,7 @@ def urban(phrase: str) -> Definition:
 
     headers = {
         'x-rapidapi-host': "mashape-community-urban-dictionary.p.rapidapi.com",
-        'x-rapidapi-key': "5adea85577msh59b06b5fa5af3bap149422jsnfc9bdd40a2ce"
+        'x-rapidapi-key': urban_dict_key
         }
 
     request = requests.request("GET", url, headers=headers, params=query)
@@ -63,7 +67,7 @@ def urban(phrase: str) -> Definition:
     definition.example = remove_brackets(data["example"])
 
     if len(definition.definition) > 256:
-        definition.example = f"**{definition.definition}**\n*{definition.example}*"
+        definition.example = f"**{definition.definition}**\n*{definition.example}*"  # noqa
         definition.definition = ""
         # definition.definition = definition.definition[:253] + "..."
 

@@ -1,4 +1,5 @@
 import psycopg2
+from psycopg2 import sql
 import os
 
 
@@ -38,6 +39,15 @@ class Database:
                         triggers[trigger] = [r]
 
         return triggers
+
+    def get_api_key(self, key) -> str:
+        with psycopg2.connect(self.db_url) as conn:
+            with conn.cursor() as cur:
+                cur.execute(sql.SQL("""SELECT key FROM api_key
+                                       WHERE name = {};""")
+                            .format(sql.Literal(key)))
+
+                return cur.fetchall()[0][0]
 
 
 db = Database()
