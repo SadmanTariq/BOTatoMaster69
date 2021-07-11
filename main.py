@@ -15,14 +15,11 @@ import trigger_response
 commands_list = [
     jokes.Jokes,
     calculator.Calculator,
-    on_message_commands.MahdiOk,
     on_message_commands.Dadbot,
     on_message_commands.Shutdown,
     on_message_commands.RandomPing,
     on_message_commands.TtTest,
-    on_message_commands.TashfinReadRoW,
     trigger_response.TriggerResponse
-    # on_message_commands.TriggerResponse
 ]
 
 

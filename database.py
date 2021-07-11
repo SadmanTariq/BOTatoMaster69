@@ -16,16 +16,26 @@ class Database:
         triggers = {}
         with psycopg2.connect(self.db_url) as conn:
             with conn.cursor() as cur:
-                cur.execute("""SELECT trigger.trigger_rpn, response.response
+                cur.execute("""SELECT
+                                   trigger.trigger_rpn,
+                                   response.response,
+                                   response.bias,
+                                   response.as_reply
                                FROM trigger INNER JOIN response
-                               ON trigger.id = response.trigger
+                                   ON trigger.id = response.trigger
                                WHERE trigger.approved = TRUE;""")
 
-                for trigger, response in cur.fetchall():
+                for trigger, response, bias, as_reply in cur.fetchall():
+                    r = {
+                        'response': response,
+                        'bias': bias,
+                        'as_reply': as_reply
+                    }
+
                     try:
-                        triggers[trigger].append(response)
+                        triggers[trigger].append(r)
                     except KeyError:
-                        triggers[trigger] = [response]
+                        triggers[trigger] = [r]
 
         return triggers
 

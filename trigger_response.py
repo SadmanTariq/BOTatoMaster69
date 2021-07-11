@@ -87,7 +87,15 @@ class Trigger():
         return self.selector_root.execute(message)
 
     async def respond(self, message):
-        await message.channel.send(random.choice(self.responses))
+        weighted = []
+        for r in self.responses:
+            for i in range(r['bias']):
+                weighted.append(r)
+
+        response = random.choice(weighted)
+        await message.channel.send(
+            response['response'],
+            reference=message if response['as_reply'] else None)
 
 
 class Selector:
