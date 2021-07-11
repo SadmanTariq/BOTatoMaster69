@@ -1,6 +1,5 @@
 from asyncio import sleep
-import json
-from random import randrange, randint
+from random import randrange, choice
 from math import exp
 import discord.errors
 import string
@@ -95,42 +94,6 @@ class Shutdown(OnMessageCommands):
             await message.channel.send("Fuck off " + message.author.name)
 
 
-class TriggerResponse(OnMessageCommands):
-    """If a message contains a trigger from responses.json then reply
-    with a randomly selected response for that trigger."""
-
-    _responses = None
-
-    @classmethod
-    def init(cls):
-        responses_json_path = "responses.json"
-        try:
-            with open(responses_json_path) as responses_json:
-                cls._responses = json.load(responses_json)
-                print("Responses loaded.")
-        except FileNotFoundError:
-            print(responses_json_path + "does not exist. Quitting.")
-            quit()
-
-    @classmethod
-    def exec_check(cls, message):
-        for trigger, _ in cls._responses.items():
-            if message.content.lower().find(trigger) != -1:
-                return True
-        return False
-
-    @classmethod
-    async def respond(cls, message):
-        cls.on_call(message)
-        for trigger, response_list in cls._responses.items():
-            if message.content.lower().find(trigger) != -1:
-                response = response_list[randrange(len(response_list))]
-                response = response.format(message.author.name)
-                print(f"Trigger: {trigger}, response: {response}")
-                await message.channel.send(response)
-                return
-
-
 class RandomPing(OnMessageCommands):
     """Ping a random user on @someone"""
 
@@ -158,16 +121,13 @@ class RandomPing(OnMessageCommands):
         members = message.guild.members
         iters = 4
 
-        random_member = lambda m: m[randrange(len(members))]  # noqa: E731
-        duration = lambda i: exp(float(i) / 3.0) * 0.01  # noqa: E731
-
-        shuffling_message = await message.channel.send(random_member(members).name)  # noqa
+        shuffling_message = await message.channel.send(choice(members).name)
         for i in range(iters):
-            await sleep(duration(i))
-            await shuffling_message.edit(content=random_member(members).name)
+            await sleep(exp(float(i) / 3.0) * 0.01)
+            await shuffling_message.edit(content=choice(members).name)
 
         await shuffling_message.delete()
-        await message.channel.send(random_member(members).mention)
+        await message.channel.send(choice(members).mention)
 
     @classmethod
     async def on_fail(cls, message):
@@ -181,58 +141,9 @@ class RandomPing(OnMessageCommands):
             await response.delete(delay=5)
 
 
-class MahdiOk(OnMessageCommands):
-    """ Responds to when Mahdi says ok """
-
-#     @classmethod
-#     def init(cls):
-#         pass
-
-#     @classmethod
-#     def on_call(cls, message):
-#         print(f"{cls.__name__}, {message.author.name}: {message.content}")
-
-    @classmethod
-    def exec_check(cls, message):
-        return message.content.lower().strip() == "ok"
-
-    @classmethod
-    async def respond(cls, message):
-        cls.on_call(message)
-        MAHDI_ID = 396236347171667970
-        if message.author.id == MAHDI_ID:
-            # print("Responded")
-            await message.channel.send("Yes we get it you exist")
-
-
-class RikthPlayHollowKnight(OnMessageCommands):
-    """Rikth play Hollow Knight 😤"""
-    RIKTH_ID = 190756291558375424
-
-    @classmethod
-    def exec_check(cls, message):
-        return message.author.id == cls.RIKTH_ID and randrange(10) < 2
-
-    @classmethod
-    async def respond(cls, message):
-        cls.on_call(message)
-        await message.channel.send("Rikth play Hollow Knight 😤")
-
-class TashfinReadRoW(OnMessageCommands):
-    """Tashfin read RoW 😤😠😡"""
-    TASHFIN_ID = 232798874652246016
-
-    @classmethod
-    def exec_check(cls, message):
-        return message.author.id == cls.TASHFIN_ID and randrange(10) < 2
-
-    @classmethod
-    async def respond(cls, message):
-        cls.on_call(message)
-        await message.channel.send("Tashfin read RoW 😤😠😡")
-
 class TtTest(OnMessageCommands):
-    """If the message is some variation of tt, tTtT, t etc. then send ttt and delete the original message after 5 seconds."""
+    """If the message is some variation of tt, tTtT, t etc. then send ttt and
+    delete the original message after 5 seconds."""
 
     @classmethod
     def exec_check(cls, message):
@@ -255,5 +166,7 @@ class TtTest(OnMessageCommands):
         cls.on_call(message)
 
         await message.delete(delay=5)
-        resp = await message.channel.send('t' * (2000 if len(message.content) * 2 > 2000 else len(message.content) * 2))
+        resp = await message.channel.send('t' * (2000 if len(message.content)
+                                          * 2 > 2000 else len(message.content)
+                                          * 2))
         await resp.delete(delay=5)
