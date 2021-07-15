@@ -36,7 +36,8 @@ class Client(commands.Bot):
             if message.content.startswith(self.command_prefix + command.name):
                 return
 
-        if message.author == client.user:
+        # Dont respond if sender is a bot account.
+        if message.author.bot:
             return
 
         for command in COMMANDS:
