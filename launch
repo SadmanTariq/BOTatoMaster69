@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+SCRIPT="$(readlink -f "$0")"
+DIR="$(dirname "$SCRIPT")"
+cd $DIR
+
+
+function launch() {
+    pipenv run python "$DIR/main.py"
+    launch
+}
+
+if [ "$1" == '--tmux' ]; then
+    if tmux has-session -t 'botatomaster69'; then
+        tmux kill-session -t 'botatomaster69'
+    fi
+    tmux new-session -d -s 'botatomaster69' "$SCRIPT"
+else
+    launch
+fi
+    
