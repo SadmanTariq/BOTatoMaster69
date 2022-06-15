@@ -75,7 +75,8 @@ class Trigger():
             'sender': Sender,
             'random': Random,
             'and': And,
-            'or': Or
+            'or': Or,
+            'guild': Guild
         }
 
         stack = []
@@ -185,6 +186,14 @@ class Or(Selector):
 
     def execute(self, message) -> bool:
         return self._get_arg(0, message) or self._get_arg(1, message)
+
+
+class Guild(Selector):
+    """Matches guild/server by ID."""
+    num_args = 1
+
+    def execute(self, message) -> bool:
+        return int(self._get_arg(0)) == message.guild.id
 
 
 class InvalidRpnError(Exception):
